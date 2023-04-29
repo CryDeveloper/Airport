@@ -36,21 +36,21 @@ namespace Airport
 
         private void btnPassangers_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.ActiveFrame.Navigate(new Passangers());
+            MainFrame.ActiveFrame.Navigate(new PagePassangers());
         }
 
         private void btnRoutes_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.ActiveFrame.Navigate(new Routes());
+            MainFrame.ActiveFrame.Navigate(new PageRoutes());
         }
         private void btnPlane_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.ActiveFrame.Navigate(new Plane());
+            MainFrame.ActiveFrame.Navigate(new PagePlanes());
         }
 
         private void btnBoked_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.ActiveFrame.Navigate(new BookedTickets());
+            MainFrame.ActiveFrame.Navigate(new PageBookedTickets());
         }
 
     }

@@ -9,6 +9,25 @@
       Title="PagePassangers">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Клиенты" Grid.Row="0"/>
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" x:Name="dgPassangers" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}"/>
+                <DataGridTextColumn Header="Документ" Binding="{Binding TypesDocuments.NameDocument}"/>
+                <DataGridTextColumn Header="Серия документа" Binding="{Binding SerialrDocument}"/>
+                <DataGridTextColumn Header="Номер документа" Binding="{Binding NumberDocument}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price }"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20">
+            <Button Style="{StaticResource NewWindowButton}">Купить рейс</Button>
+        </StackPanel>
     </Grid>
 </Page>

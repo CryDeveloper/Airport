@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Airport.StaticClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Airport.Pages
         public PagePassangers()
         {
             InitializeComponent();
+            dgPassangers.ItemsSource = BaseConnect.baseModel.Flights.ToList();
         }
     }
 }
