@@ -14,10 +14,19 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <DataTemplate x:Key="DataTemp">
+                <ComboBox x:Name="cbRoutes" ItemsSource="{Binding AllRoutes}"  SelectedIndex="{Binding Routes.FullRoute,Mode=TwoWay}" SelectionChanged="cbRoutes_SelectionChanged"  Tag="{Binding ID_Route}" />
+            </DataTemplate>
+        </Grid.Resources>
+
         <TextBlock Text="Рейсы" Grid.Row="0"/>
         <DataGrid Grid.Row="1" AutoGenerateColumns="False" x:Name="dgFlights" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Маршрут" Binding="{Binding Routes.FullRoute}"/>
+                <!--<DataGridComboBoxColumn Header="Маршрут" ItemsSource="{Binding AllRoutes}" SelectedValueBinding="{Binding Routes.FullRoute, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedValuePath="ID_Route"/>-->
+                <!--<DataGridTemplateColumn Header="Маршрут" CellTemplate="{StaticResource DataTemp}"/>-->
                 <DataGridTextColumn Header="Номер рейса" Binding="{Binding Number_Flight}"/>
                 <DataGridTextColumn Header="Дата и время вылета" Binding="{Binding DateTimeDeparture}"/>
                 <DataGridTextColumn Header="Время полета" Binding="{Binding FlightTime}"/>

@@ -25,6 +25,8 @@ namespace Airport.Pages
         {
             InitializeComponent();
             dgFlights.ItemsSource = BaseConnect.baseModel.Flights.ToList();
+            
+            
         }
 
         private void btnSaveChange_Click(object sender, RoutedEventArgs e)
@@ -37,6 +39,14 @@ namespace Airport.Pages
             WindowFlightReservations window = new WindowFlightReservations();
             window.ShowDialog();
 
+        }
+
+        private void cbRoutes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            int id = (int)comboBox.Tag;
+            Routes routes = BaseConnect.baseModel.Routes.FirstOrDefault(x => x.ID_Route == id);
+            routes.ID_Route = comboBox.SelectedIndex + 1;
         }
     }
 }
