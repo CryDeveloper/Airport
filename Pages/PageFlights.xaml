@@ -22,8 +22,8 @@
                 <DataGridTextColumn Header="Дата и время вылета" Binding="{Binding DateTimeDeparture}"/>
                 <DataGridTextColumn Header="Время полета" Binding="{Binding FlightTime}"/>
                 <DataGridTextColumn Header="Самолет" Binding="{Binding Plane.ModelPlane}"/>
-                <DataGridTextColumn Header="Класс рейса" Binding="{Binding Price}"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding ClassesFlights.NAmeClasses}"/>
+                <DataGridTextColumn Header="Класс рейса" Binding="{Binding ClassesFlights.NAmeClasses}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price }"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20">

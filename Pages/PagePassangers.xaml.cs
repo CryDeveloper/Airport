@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Airport.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для BookedTickets.xaml
+    /// Логика взаимодействия для PagePassangers.xaml
     /// </summary>
-    public partial class BookedTickets : Page
+    public partial class PagePassangers : Page
     {
-        public BookedTickets()
+        public PagePassangers()
         {
             InitializeComponent();
         }

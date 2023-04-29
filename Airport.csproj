@@ -82,9 +82,6 @@
     <Compile Include="Pages\BookedTickets.xaml.cs">
       <DependentUpon>BookedTickets.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Flights.xaml.cs">
-      <DependentUpon>Flights.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\PageFlights.xaml.cs">
       <DependentUpon>PageFlights.xaml</DependentUpon>
     </Compile>
@@ -133,10 +130,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\BookedTickets.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Flights.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
