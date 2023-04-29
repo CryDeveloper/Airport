@@ -37,10 +37,9 @@ namespace Airport.Pages
             {
                 namePAsseng.Add(item.FullNamePassanger);
             }
-            cbPassanger.ItemsSource = nameFlights;
+            cbPassanger.ItemsSource = namePAsseng;
 
             tbCountTicket.Text = "0";
-
 
             tbSumma.Text = "0 руб.";
         }
@@ -52,19 +51,24 @@ namespace Airport.Pages
             bookedTickets.ID_Passanger = cbPassanger.SelectedIndex + 1;
             BaseConnect.baseModel.BookedTickets.Add(bookedTickets);
             BaseConnect.baseModel.SaveChanges();
+            MessageBox.Show("Билет забронирован!");
+            Close();
         }
 
         private void tbCountTicket_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (BaseConnect.baseModel.Flights.FirstOrDefault(x => x.ID_Flight == cbRoute.SelectedIndex + 1) != null)
+            if (BaseConnect.baseModel.Flights.FirstOrDefault(x => x.ID_Flight == cbRoute.SelectedIndex + 1) != null && tbCountTicket.Text != "")
             {
+                var c = tbCountTicket.Text;
+                var a = Convert.ToDouble(tbCountTicket.Text);
+                var b = Convert.ToDouble(BaseConnect.baseModel.Flights.FirstOrDefault(x => x.ID_Flight == (cbRoute.SelectedIndex + 1)).Price);
                 tbSumma.Text = (Convert.ToDouble(tbCountTicket.Text) * Convert.ToDouble(BaseConnect.baseModel.Flights.FirstOrDefault(x => x.ID_Flight == (cbRoute.SelectedIndex + 1)).Price)).ToString() + " руб.";
             }
         }
 
         private void cbRoute_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (BaseConnect.baseModel.Flights.FirstOrDefault(x => x.ID_Flight == cbRoute.SelectedIndex + 1) != null)
+            if (BaseConnect.baseModel.Flights.FirstOrDefault(x => x.ID_Flight == cbRoute.SelectedIndex + 1) != null && tbCountTicket.Text != "")
             {
                 tbSumma.Text = (Convert.ToDouble(tbCountTicket.Text) * Convert.ToDouble(BaseConnect.baseModel.Flights.FirstOrDefault(x => x.ID_Flight == (cbRoute.SelectedIndex + 1)).Price)).ToString() + " руб.";
             }
