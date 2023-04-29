@@ -9,6 +9,33 @@
       Title="PageBookedTickets">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Рейсы" Grid.Row="0"/>
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" x:Name="dgBookedTickets" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Маршрут" Binding="{Binding Flights.Routes.FullRoute}"/>
+                <DataGridTextColumn Header="Номер рейса" Binding="{Binding Flights.Number_Flight}"/>
+                <DataGridTextColumn Header="Дата и время вылета" Binding="{Binding Flights.DateTimeDeparture}"/>
+                <DataGridTextColumn Header="Время полета" Binding="{Binding Flights.FlightTime}"/>
+                <DataGridTextColumn Header="Самолет" Binding="{Binding Flights.Plane.ModelPlane}"/>
+                <DataGridTextColumn Header="Класс рейса" Binding="{Binding Flights.ClassesFlights.NAmeClasses}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Flights.Price }"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Passangers.Surname}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Passangers.Name}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Passangers.Patronymic}"/>
+                <DataGridTextColumn Header="Документ" Binding="{Binding Passangers.TypesDocuments.NameDocument}"/>
+                <DataGridTextColumn Header="Серия документа" Binding="{Binding Passangers.SerialrDocument}"/>
+                <DataGridTextColumn Header="Номер документа" Binding="{Binding Passangers.NumberDocument}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20">
+            <Button x:Name="btnSaveChange" Style="{StaticResource NewWindowButton}" Click="btnSaveChange_Click">Сохранить изменения</Button>
+            <Button x:Name="btnBooked" Style="{StaticResource NewWindowButton}" Click="btnBooked_Click">Забронировать рейс</Button>
+        </StackPanel>
     </Grid>
 </Page>

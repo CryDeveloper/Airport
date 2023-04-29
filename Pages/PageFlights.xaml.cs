@@ -26,5 +26,17 @@ namespace Airport.Pages
             InitializeComponent();
             dgFlights.ItemsSource = BaseConnect.baseModel.Flights.ToList();
         }
+
+        private void btnSaveChange_Click(object sender, RoutedEventArgs e)
+        {
+            BaseConnect.baseModel.SaveChanges();
+        }
+
+        private void btnBooked_Click(object sender, RoutedEventArgs e)
+        {
+            WindowFlightReservations window = new WindowFlightReservations();
+            window.ShowDialog();
+
+        }
     }
 }

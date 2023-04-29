@@ -9,6 +9,21 @@
       Title="PagePlanes">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Клиенты" Grid.Row="0"/>
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" x:Name="dgPlane" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Модель самолета" Binding="{Binding ModelPlane}"/>
+                <DataGridTextColumn Header="Количество мест" Binding="{Binding CountSeats}"/>
+                <DataGridTextColumn Header="Технические характеристики" Binding="{Binding TechnicalCharacteristic}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20">
+            <Button x:Name="btnSaveChange" Style="{StaticResource NewWindowButton}" Click="btnSaveChange_Click">Сохранить изменения</Button>
+        </StackPanel>
     </Grid>
 </Page>

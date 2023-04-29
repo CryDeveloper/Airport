@@ -24,7 +24,12 @@ namespace Airport.Pages
         public PagePassangers()
         {
             InitializeComponent();
-            dgPassangers.ItemsSource = BaseConnect.baseModel.Flights.ToList();
+            dgPassangers.ItemsSource = BaseConnect.baseModel.Passangers.ToList();
+        }
+
+        private void btnSaveChange_Click(object sender, RoutedEventArgs e)
+        {
+            BaseConnect.baseModel.SaveChanges();
         }
     }
 }

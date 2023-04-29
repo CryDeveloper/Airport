@@ -94,6 +94,9 @@
     <Compile Include="Pages\PageRoutes.xaml.cs">
       <DependentUpon>PageRoutes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WindowFlightReservations.xaml.cs">
+      <DependentUpon>WindowFlightReservations.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Passangers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageRoutes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WindowFlightReservations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

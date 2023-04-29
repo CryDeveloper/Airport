@@ -27,7 +27,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20">
-            <Button Style="{StaticResource NewWindowButton}">Купить рейс</Button>
+            <Button x:Name="btnSaveChange" Style="{StaticResource NewWindowButton}" Click="btnSaveChange_Click">Сохранить изменения</Button>
+            <Button x:Name="btnBooked" Style="{StaticResource NewWindowButton}" Click="btnBooked_Click">Забронировать рейс</Button>
         </StackPanel>
     </Grid>
 </Page>

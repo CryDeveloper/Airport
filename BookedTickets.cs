@@ -15,8 +15,8 @@ namespace Airport
     public partial class BookedTickets
     {
         public int ID_Order { get; set; }
-        public string Number_Flight { get; set; }
-        public Nullable<int> ID_Passanger { get; set; }
+        public int ID_Flight { get; set; }
+        public int ID_Passanger { get; set; }
     
         public virtual Flights Flights { get; set; }
         public virtual Passangers Passangers { get; set; }

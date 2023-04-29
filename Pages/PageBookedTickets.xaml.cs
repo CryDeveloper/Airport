@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Airport.StaticClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace Airport.Pages
         public PageBookedTickets()
         {
             InitializeComponent();
+            dgBookedTickets.ItemsSource = BaseConnect.baseModel.BookedTickets.ToList();
+        }
+
+        private void btnSaveChange_Click(object sender, RoutedEventArgs e)
+        {
+            BaseConnect.baseModel.SaveChanges();
+        }
+
+        private void btnBooked_Click(object sender, RoutedEventArgs e)
+        {
+            WindowFlightReservations window = new WindowFlightReservations();
+            window.ShowDialog();
         }
     }
 }

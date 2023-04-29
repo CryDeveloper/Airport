@@ -23,11 +23,11 @@
                 <DataGridTextColumn Header="Документ" Binding="{Binding TypesDocuments.NameDocument}"/>
                 <DataGridTextColumn Header="Серия документа" Binding="{Binding SerialrDocument}"/>
                 <DataGridTextColumn Header="Номер документа" Binding="{Binding NumberDocument}"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Price }"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20">
-            <Button Style="{StaticResource NewWindowButton}">Купить рейс</Button>
+            <Button x:Name="btnSaveChange" Style="{StaticResource NewWindowButton}" Click="btnSaveChange_Click">Сохранить изменения</Button>
         </StackPanel>
+
     </Grid>
 </Page>

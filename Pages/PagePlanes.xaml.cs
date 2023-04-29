@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Airport.StaticClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Airport.Pages
         public PagePlanes()
         {
             InitializeComponent();
+            dgPlane.ItemsSource = BaseConnect.baseModel.Plane.ToList();
+        }
+
+        private void btnSaveChange_Click(object sender, RoutedEventArgs e)
+        {
+            BaseConnect.baseModel.SaveChanges();
         }
     }
 }

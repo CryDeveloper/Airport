@@ -20,6 +20,7 @@ namespace Airport
             this.BookedTickets = new HashSet<BookedTickets>();
         }
     
+        public int ID_Flight { get; set; }
         public string Number_Flight { get; set; }
         public int ID_Route { get; set; }
         public System.DateTime DateTimeDeparture { get; set; }

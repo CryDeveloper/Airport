@@ -1,0 +1,30 @@
+﻿<Window x:Class="Airport.Pages.WindowFlightReservations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Airport.Pages"
+        mc:Ignorable="d"
+        Title="WindowFlightReservations" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Покупка билета" Grid.Row="0"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <TextBlock Text="Выбор рейса"/>
+            <ComboBox x:Name="cbRoute" SelectionChanged="cbRoute_SelectionChanged"></ComboBox>
+            <TextBlock Text="Выбор пассажира"/>
+            <ComboBox x:Name="cbPassanger"></ComboBox>
+            <TextBlock Text="Количество билетов"/>
+            <TextBox x:Name="tbCountTicket" TextChanged="tbCountTicket_TextChanged"></TextBox>
+            <TextBlock Text="Сумма к оплате"/>
+            <TextBox x:Name="tbSumma" IsEnabled="False" ></TextBox>
+        </StackPanel>
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20">
+            <Button x:Name="btnPay" Style="{StaticResource NewWindowButton}" Click="btnPay_Click">Забронировать билет</Button>
+        </StackPanel>
+    </Grid>
+</Window>
